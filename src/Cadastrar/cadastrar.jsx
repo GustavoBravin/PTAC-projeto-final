@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function cadastrar(){
 const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"));
-const [id,setId] = useState(listaLocalStorage[listaLocalStorage.length - 1]?.id + 1 || 1);
+const [id,setId] = useState(listaLocalStorage[listaLocalStorage.length - 1]?.id + 1 ||1);
 const [nome,setNome] = useState("");
 const [url,setUrl] = useState("");
 const [lista, setLista ] = useState(listaLocalStorage || []);
@@ -29,6 +29,13 @@ useEffect(() => {
 
 
 };
+
+<link to={'/detalhe/${cadastrar.id}'} >
+<p>{cadastrar.nome}</p>
+ 
+<p>{cadastrar.url}</p>
+
+</link>
 
 const remover = (id) => {
     const auxLista = lista.filter((item) => item.id !== id);
