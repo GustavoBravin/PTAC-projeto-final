@@ -1,10 +1,19 @@
-export default function Card({cadastrar}){
-
+export default function Cards({listaV}){
+   
     return(
-    <div>
-     <h1>{cadastrar.nome}</h1>
-     <h1>{cadastrar.url}</h1>
+        
+     listaV.map((video) =>
+     
+     <div className="card">
+     <iframe 
+     src={"https://www.youtube.com/embed/" + video.url.slice(17)} 
+     frameborder="0"
+     >
+        
+     </iframe>
 
     </div>
+    
+    )
     )
 }
