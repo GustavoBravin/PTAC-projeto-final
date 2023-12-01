@@ -2,13 +2,13 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Cards from '../componentes/Card'
-import cadastrar from "../Cadastrar/cadastrar";
+
 
 export default function Home(){
     
-    const {id} = useParams();
+   
     const lista = JSON.parse(localStorage.getItem("Lista"))  
-console.log(lista)
+       console.log(lista)
    
     return(
 

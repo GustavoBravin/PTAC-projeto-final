@@ -30,12 +30,6 @@ useEffect(() => {
 
 };
 
-<link to={'/detalhe/${cadastrar.id}'} >
-<p>{cadastrar.nome}</p>
- 
-<p>{cadastrar.url}</p>
-
-</link>
 
 const remover = (id) => {
     const auxLista = lista.filter((item) => item.id !== id);
@@ -63,8 +57,17 @@ return (
      &emsp;                        
         <button>concluir</button>
         </form>   
-        </div>     
+        </div>   
+        {lista.map((cadastrar)=>
+     <div key= {cadastrar.id}>
+         <p>{cadastrar.nome}</p>
+         <button onClick={() => remover(cadastrar.id)}>Remover</button>
+     </div>
+     )}   
     </div>
+   
+     
+
 );
 
  }
