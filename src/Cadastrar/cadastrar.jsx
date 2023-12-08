@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function cadastrar(){
-const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"));
+const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"))|| [];
 const [id,setId] = useState(listaLocalStorage[listaLocalStorage.length - 1]?.id + 1 ||1);
 const [nome,setNome] = useState("");
 const [url,setUrl] = useState("");
-const [lista, setLista ] = useState(listaLocalStorage || []);
+const [lista, setLista ] = useState(listaLocalStorage);
+
 
 useEffect(() => {
     localStorage.setItem("Lista", JSON.stringify(lista));
@@ -15,7 +16,7 @@ useEffect(() => {
 
   const salvar =(e) =>{
     e.preventDefault();
-    setLista([...lista, {
+     setLista([...lista, {
             nome: nome,
             url:url,
             id: id

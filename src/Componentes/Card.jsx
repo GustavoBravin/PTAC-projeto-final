@@ -1,12 +1,21 @@
+import { Link } from "react-router-dom"
+
 export default function Cards({listaV}){
-    if(listaV == null){
-       return <h1>opss</h1> 
+    
+    if(listaV  == []){
+       return <h1>Nada Cadastrado Ainda</h1> 
     }
     return(
         
-     listaV.map((video) =>
-         
+     listaV.map((video) =>  
+     
+        
      <div className="card">
+
+      <Link to={`/detalhe/${video.id} `}>
+     <h1>{video.nome}</h1>
+     </Link>
+
      <iframe 
      src={"https://www.youtube.com/embed/" + video.url.slice(17)} 
      frameborder="0"

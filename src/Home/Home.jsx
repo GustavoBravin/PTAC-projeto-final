@@ -1,14 +1,13 @@
-import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Cards from '../componentes/Card'
+import Cards from '../Componentes/Card'
 
 
 export default function Home(){
     
    
     const lista = JSON.parse(localStorage.getItem("Lista"))  
-       console.log(lista)
+      
    
     return(
 
